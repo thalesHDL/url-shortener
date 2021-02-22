@@ -4,7 +4,7 @@ import { Column, Entity, PrimaryColumn } from 'typeorm';
 export class UrlStoreEntity {
     @PrimaryColumn("varchar", { name: "CODE", length: 10, unique: true})
     code: string;
-    @Column("varchar", { name: "URL", length: 220, nullable: false })
+    @Column("varchar", { name: "URL", length: 255, nullable: false })
     url: string;
 
     public static of(code: string, url: string): UrlStoreEntity {

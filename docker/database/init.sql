@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS "URL_STORE_TABLE" (
+    "CODE" varchar(10) PRIMARY KEY,
+    "URL" varchar(255) NOT NULL
+);

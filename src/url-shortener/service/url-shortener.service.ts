@@ -1,5 +1,6 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
+import { Configuration } from "src/config/configuration";
 import { Repository } from "typeorm";
 import { UrlStoreEntity } from "../entity/url-store.entity";
 import { IEncoderService } from "./encoder.service";
@@ -18,7 +19,11 @@ export class UrlShortenerService implements IUrlShortenerService {
     public async shorten(url: string): Promise<string> {
         const code: string = this.encoderService.encode(url);
         await this.repository.save(UrlStoreEntity.of(code, url));
-        return code;
+        return this.mountNewUrl(code);
+    }
+
+    private mountNewUrl(code: string) {
+        return `http://${Configuration['server']['host']}:${Configuration['server']['port']}/${code}`;
     }
 
     public async getRedirecUrl(code: string): Promise<string> {

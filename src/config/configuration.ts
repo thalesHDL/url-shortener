@@ -5,18 +5,17 @@ export const Configuration = {
     },
     swagger: {
         key: "swagger",
-        title: "Cats example",
-        description: "The cats API description",
+        title: "Shortener Url Api",
+        description: "This API provides a simple tool that takes a long URL and turns it into whatever URL you would like it to be.",
         version: "1.0"
     },
     datasource: {
         type: "postgres",
         host: '127.0.0.1',
         port: 5432,
-        username: 'postgres',
-        password: '123456',
-        database: 'postgres',
-        schema: 'public',
+        username: 'thales',
+        password: 'password',
+        database: 'DB_URL_SHORTENER',
         synchronize: true
     }
 }
