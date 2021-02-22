@@ -6,7 +6,7 @@ export const Configuration = {
     swagger: {
         key: "swagger",
         title: "Shortener Url Api",
-        description: "This API provides a simple tool that takes a long URL and turns it into whatever URL you would like it to be.",
+        description: "This API provides a simple tool that takes a long URL and turns it into whatever URL.",
         version: "1.0"
     },
     datasource: {
