@@ -4,7 +4,7 @@
 
 API provides a simple tool that takes a long URL and turns it into whatever URL you would like it to be.
 
-## Installation
+## Setup
 
 ```bash
 $ docker-compose up -d
